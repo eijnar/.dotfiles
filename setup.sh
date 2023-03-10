@@ -9,7 +9,7 @@ check_dependencies(){
     #Declare list of package managers and their usages
     declare -Ag packman_list=(
         [pacman]='sudo pacman -Sy'
-        [apt]='echo "sudo apt update -y; sudo apt install -y'
+        [apt]='sudo apt update -y; sudo apt install -y'
         [yum]='yum install -y epel-release; yum repolist -y; yum install -y')
 
     #Find the package manager on the system and install the package
