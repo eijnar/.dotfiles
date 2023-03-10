@@ -31,14 +31,10 @@ check_dependencies(){
     test -z ${missing_deps[0]} || install_deps ${missing_deps[@]} || fail "Dependencies could not provide"
 }
 
-setup_vim(){
-	if [ ! -f ~/.vim/autoload/plug.vim ]
-	then 
-		echo Installing plug.vim
-		mkdir -p ~/.vim/autoload && curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	fi
-}
-
 check_dependencies
-setup_vim
+
+# Setup links
 find $PWD/confs -maxdepth 1 -type f -exec ln -sf {} $HOME/ \;
+
+# Setup tmux plugin manager
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
