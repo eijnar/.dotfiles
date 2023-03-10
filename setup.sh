@@ -9,7 +9,7 @@ check_dependencies(){
     #Declare list of package managers and their usages
     declare -Ag packman_list=(
         [pacman]='sudo pacman -Sy'
-        [apt]='sudo apt update -yqq; sudo apt install -yqq'
+        [apt]='sudo apt update -yqq; sudo apt install -yqq 2>/dev/null'
         [yum]='yum install -y epel-release; yum repolist -y; yum install -y')
 
     #Find the package manager on the system and install the package
@@ -35,7 +35,7 @@ setup_vim(){
 	if [ ! -f ~/.vim/autoload/plug.vim ]
 	then 
 		echo Installing plug.vim
-		mkdir -p ~/.vim/autoload curl -fLo ~/.vim/autoload/plug.vim \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		mkdir -p ~/.vim/autoload && curl -fLo ~/.vim/autoload/plug.vim \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
 }
 
