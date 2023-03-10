@@ -32,4 +32,4 @@ check_dependencies(){
 }
 
 check_dependencies
-find $PWD/confs -maxdepth 1 -type f -exec ln -s {} $HOME/ \;
+find $PWD/confs -maxdepth 1 -type f -exec ln -sf {} $HOME/ \;
