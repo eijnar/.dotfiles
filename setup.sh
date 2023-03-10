@@ -35,7 +35,7 @@ setup_vim(){
 	if [ ! -f ~/.vim/autoload/plug.vim ]
 	then 
 		echo Installing plug.vim
-		mkdir -p ~/.vim/autoload && curl -fLo ~/.vim/autoload/plug.vim \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		mkdir -p ~/.vim/autoload && curl -fLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	fi
 }
 
