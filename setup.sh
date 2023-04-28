@@ -1,7 +1,7 @@
 #!/bin/bash
 
 check_dependencies(){
-    #Declare list of dependencies please
+    #Declare list of dependencies 
     declare -Ag deps=(
         [tmux]='tmux'
         [curl]='curl'
